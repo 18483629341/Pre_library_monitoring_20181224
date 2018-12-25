@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>环境标签服务系统</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/Pre_library_monitoring.css" />
+		<style>
+			/*1. 最外层容器
+        width: 200px;
+        overflow-x: scroll;
+    */
+    .img-view{
+        width: 200px;
+        overflow-x: scroll;
+    }
+    /*2. 次外层容器 display: flex;*/
+    .container{
+        display: flex;
+    }
+    .container > div{
+        border-top: 1px solid #000;
+    }
+    .container > div:nth-child(1){
+        background: pink;
+    }
+    .container > div:nth-child(2){
+        background: yellow;
+    }
+    .container > div:nth-child(3){
+        background: red;
+    }
+    /*3. 外层容器 flex-shrink: 0;
+        外层容器和图片 width: 100px;
+    */
+    .box{
+        width: 100px;
+        flex-shrink: 0;/*默认是1 (经测试iniline-flex的flex-item应该默认是0)*/
+    }
+    .box > img{
+        width: 100px;
+    }
+		</style>
+
+	</head>
+	<body>
+		
+		<!--<div class="img-view">-->
+			<div class="container">
+					<div class="box">
+							<img src="https://via.placeholder.com/110x120" alt="">
+					</div>  
+					<div class="box">
+							<img src="https://via.placeholder.com/140x110" alt="">
+					</div>
+					<div class="box">
+							<img src="https://via.placeholder.com/130x130" alt="">
+					</div> 
+					<div class="box">
+							<img src="https://via.placeholder.com/90x150" alt="">
+					</div> 
+			</div>
+			<div class="container">
+					<div class="box">
+							<p>img1 110*120</p>
+					</div>  
+					<div class="box">
+							<p>img2 140*110</p>
+					</div>
+					<div class="box">
+							<p>img3 130*130</p>
+					</div> 
+					<div class="box">
+							<p>img4 90*150</p>
+					</div> 
+			</div>
+	<!--</div>-->
+		
+		
+	</body>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	
+</html>
