@@ -32,12 +32,12 @@
 										'<span class="timeSpan">'+subItem['lastRecordTime']+'</span>'+
 									'</p>'+
 									'<p class="mountP">'+
-										'<span>最新数据量:</span>'+
+										'<span>最新数据量：</span>'+
 										'<b class="MonitorMount">'+subItem['lastRecordMount']+'</b>'+
 										'<span class="classifier">条</span>'+
 									'</p>'+
 									'<p class="AddressP">'+
-										'<span>地址:</span>'+
+										'<span>地址：</span>'+
 										'<b class="MonitorAddress">'+subItem['lastRecordUrl']+'</b>'+
 									'</p>'+
 								'</div>'+
@@ -45,7 +45,7 @@
 							'<div class="InlineBlock liContentCenter">'+
 								'<div class="CenterTopDiv">'+
 									'<p class="Center CenterTop">'+
-										'<span>监控数量:</span>'+
+										'<span>监控数量：</span>'+
 										'<b class="Mouneter">'+subItem['monitorMount']+'</b>'+
 									'</p>'+
 								'</div>';
@@ -53,7 +53,7 @@
 					contenH+=a2h;
 					contenH+=	'<div class="CenterBottomDiv">'+
 									'<p class="Center CenterTop">'+
-										'<span>异常表数:</span>'+
+										'<span>异常表数：</span>'+
 										'<b class="Mouneter">'+subItem['abnormalNumber']+'</b>'+
 									'</p>'+
 								'</div>'+
@@ -66,12 +66,12 @@
 										'<span class="timeSpan">'+subItem['persentRecordTime']+'</span>'+
 									'</p>'+
 									'<p class="mountP">'+
-										'<span>最新数据量:</span>'+
+										'<span>最新数据量：</span>'+
 										'<b class="MonitorMount">'+subItem['persentRecordMount']+'</b>'+
 										'<span class="classifier">条</span>'+
 									'</p>'+
 									'<p class="AddressP">'+
-										'<span>地址:</span>'+
+										'<span>地址：</span>'+
 										'<b class="MonitorAddress">'+subItem['persentRecordUrl']+'</b>'+
 									'</p>'+
 								'</div>'+
@@ -106,7 +106,7 @@
 		if (winWidth > 2500) {
 			conWidth = 2180;
 			col = 4
-		}else if (winWidth > 1919 && winWidth<2499) {
+		}else if (winWidth > 1884 && winWidth<2499) {
 			conWidth = 1642;
 			col = 3;
 		} else {
