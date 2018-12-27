@@ -95,7 +95,8 @@
 
 	//window resize 当页面屏幕变化时 重置瀑布流
 
-	var currentWidth = 1300; //resize后的总宽度
+	var currentWidth = 1043; //resize后的总宽度
+	var col=2;
 	$(window).resize(function () {
 		resizeIn()
 	});
@@ -104,18 +105,24 @@
 		//console.log('winWidth：'+winWidth);
 		var conWidth;
 		if (winWidth > 2500) {
-			conWidth = 2180;
+			conWidth=winWidth-237-16*4;
+			//conWidth = 2180;
 			col = 4
 		}else if (winWidth > 1884 && winWidth<2499) {
-			conWidth = 1642;
+			conWidth=winWidth-237-16*3;
+			//conWidth = 1642;
 			col = 3;
 		} else {
-			conWidth = 1043;
+			conWidth=winWidth-237-16*2;
+			if(conWidth<1043){
+				conWidth = 1043;
+			}
 			col = 2
 		}
-
+        console.log('conWidth:'+conWidth+',col:'+col);
 		if (conWidth != currentWidth) {
 			currentWidth = conWidth;
+			console.log(conWidth);
 			$('#listBox').width(conWidth);
 			$('#listBox').BlocksIt({
 				numOfCol: col,
@@ -130,7 +137,7 @@
 			{
 				"type":"Trash",
 				"icon":"iconTrash",
-				"isAnormalNumber":false,
+				"isAnormalNumber":false,//该模块是否有异常表数不为0的
 				"chiTitle":" 固体废物",
 				"groupsLists":[
 					{
@@ -174,7 +181,7 @@
 			{
 				"type":"Zhyw",
 				"icon":"iconZhyw",
-				"isAnormalNumber":true,
+				"isAnormalNumber":true,//该模块是否 含有异常的表数，即groupsLists数组中任意一个异常，此处都为true
 				"chiTitle":" 综合业务",
 				"groupsLists":[
 					{
@@ -184,7 +191,7 @@
 						"lastRecordMount":2000,
 						"lastRecordUrl":"10.202.4.34",
 						"monitorMount":59,
-						"abnormalNumber":1,
+						"abnormalNumber":1,//有异常
 						"persentRecordTime":"2018.12.20",
 						"persentRecordMount":2000,
 						"persentRecordUrl":"10.202.4.34"
