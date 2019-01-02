@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$(window).load(function () {
 		initHtmlByJson(initBlock);
-
+        //initBlock是必须在页面根据数据渲染完成后，再执行的方法
 	});
 });
     /**
