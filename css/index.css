@@ -99,13 +99,13 @@ body {
   padding: 0px 16px 20px 16px;
   /* margin:0 15px 15px 0;*/
   border-radius: 4px;
-  box-shadow: 0px 1px 6px 0px #e8e7e7;
-  -moz-box-shadow: 0px 1px 6px 0px #e8e7e7;
-  -webkit-box-shadow: 0px 1px 6px 0px #e8e7e7;
-  -webkit-transition: top 1s ease, left 1s ease;
-  -moz-transition: top 1s ease, left 1s ease;
-  -o-transition: top 1s ease, left 1s ease;
-  -ms-transition: top 1s ease, left 1s ease;
+  box-shadow: 2px 2px 10px 0px #b1abab;
+  -moz-box-shadow: 2px 2px 10px 0px #b1abab;
+  -webkit-box-shadow: 2px 2px 10px 0px #b1abab;
+  -webkit-transition: top .5s ease, left .5s ease;
+  -moz-transition: top .5s ease, left .5s ease;
+  -o-transition: top .5s ease, left .5s ease;
+  -ms-transition: top .5s ease, left .5s ease;
 }
 .listLiHeader {
   display: -webkit-box;

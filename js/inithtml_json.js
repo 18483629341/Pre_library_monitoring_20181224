@@ -1,6 +1,6 @@
 
 	//根据拿到的对象数组初始化html  （勿动）
-	function initHtml(arr){
+	function initHtml(arr,callback){
 		//console.log('执行initHtml');
 	  	var ahtml="";
 	  	for(let i in arr){
@@ -83,14 +83,11 @@
 			ahtml+='</div>';// ListLi end
 		}
 		$('#listBox').html(ahtml);
-		initBlock();
-	}
-
-	//初始化瀑布流
-
-	function initBlock() {
-		//console.log('执行initBlock');
-		resizeIn();
+         //如果回调参数是一个方法，就执行方法
+		if(Object.prototype.toString.call(callback) ==='[object Function]'){
+			callback();
+		}
+		
 	}
 
 	//window resize 当页面屏幕变化时 重置瀑布流
@@ -98,9 +95,10 @@
 	var currentWidth = 1043; //resize后的总宽度
 	var col=2;
 	$(window).resize(function () {
-		resizeIn()
+		initBlock()
 	});
-	function resizeIn(){
+	//初始化瀑布流
+	function initBlock(){
 		var winWidth = $(window).width();
 		//console.log('winWidth：'+winWidth);
 		var conWidth;
@@ -119,10 +117,10 @@
 			}
 			col = 2
 		}
-        console.log('conWidth:'+conWidth+',col:'+col);
+        //console.log('conWidth:'+conWidth+',col:'+col);
 		if (conWidth != currentWidth) {
 			currentWidth = conWidth;
-			console.log(conWidth);
+			//console.log(conWidth);
 			$('#listBox').width(conWidth);
 			$('#listBox').BlocksIt({
 				numOfCol: col,
@@ -130,6 +128,41 @@
 				offsetY: 8
 			});
 		}
+		changeBack()
+	}
+
+	//根据宽度大小换每列中间箭头的背景
+	function changeBack(){
+		var centerWidth=$('.liContentCenter').width();
+		var iconPointWidth=parseInt(centerWidth*0.75);
+		if(centerWidth>222){
+          	$('.iconPoint').css({
+			  	"width":iconPointWidth+"px",
+			 	"background": "url(./img/jt_2.png) no-repeat",
+				"background-size":"100% 100%"
+				}
+			);
+			$('.iconPoint.warn').css({
+				"width":iconPointWidth+"px",
+			   "background": "url(./img/jt_warn_2.png) no-repeat",
+			  "background-size":"100% 100%"
+			  }
+		  );
+		}else{
+			$('.iconPoint').css({
+				"width":"116px",
+				"background": "url(./img/jt.png) no-repeat",
+				"background-size":"100% 100%"
+				}
+			);
+			$('.iconPoint.warn').css({
+				"width":"116px",
+				"background": "url(./img/jt_warn.png) no-repeat",
+				"background-size":"100% 100%"
+				}
+			);
+		}
+
 	}
 	//定义数据源
 	var obj={
@@ -508,4 +541,5 @@
 			}
 		]
 	}
+	
 	
